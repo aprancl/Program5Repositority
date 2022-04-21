@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.MainFXMLController">
    <top>
       <TitledPane collapsible="false" prefHeight="713.0" prefWidth="871.0" text="Main Menu" BorderPane.alignment="CENTER">
@@ -43,7 +42,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <ListView layoutX="82.0" layoutY="281.0" prefHeight="278.0" prefWidth="717.0" />
+                  <ListView fx:id="chractersInSystem" layoutX="82.0" layoutY="281.0" prefHeight="278.0" prefWidth="717.0" />
                   <Label layoutX="345.0" layoutY="225.0" text="Chracters in System">
                      <font>
                         <Font size="22.0" />
