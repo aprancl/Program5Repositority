@@ -26,36 +26,24 @@ public class FXMain extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+        // Create and display the main window
+        
         Parent root = null;
         try {
+            // refer to the FXML file specific to the "MainFXMLController"
             root = FXMLLoader.load(getClass().getResource("MainFXML.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(FXMain.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        // set scene as the main window
         Scene scene = new Scene(root);
 
+        // set basic info + show 
         primaryStage.setTitle("Mario Kart Simulator");
         primaryStage.setScene(scene);
         primaryStage.show();
-//        Button btn = new Button();
-//        btn.setText("Say 'Hello World'");
-//        btn.setOnAction(new EventHandler<ActionEvent>() {
-//            
-//            @Override
-//            public void handle(ActionEvent event) {
-//                System.out.println("Hello World!");
-//            }
-//        });
-//        
-//        StackPane root = new StackPane();
-//        root.getChildren().add(btn);
-//        
-//        Scene scene = new Scene(root, 300, 250);
-//        
-//        primaryStage.setTitle("Hello World!");
-//        primaryStage.setScene(scene);
-//        primaryStage.show();
+
     }
 
     /**
