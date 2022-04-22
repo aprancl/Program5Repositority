@@ -6,6 +6,7 @@ package mainpackage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DialogPane;
@@ -45,5 +46,16 @@ public class AddCharFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void btnOK(ActionEvent event) {
+        
+        // assign 
+        String charName = name.getText();
+        int charID = Integer.valueOf(id.getText());
+        String kart = "dummy kart"; //kartOptions.getSelectedToggle();
+        
+        
+    }
     
 }
