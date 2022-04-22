@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 /**
  *
  * @author anthonyprancl
+ * @author2 Nick Reed
  */
 public class FXMain extends Application {
 
