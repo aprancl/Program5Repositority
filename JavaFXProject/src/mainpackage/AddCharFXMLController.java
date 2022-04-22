@@ -6,7 +6,12 @@ package mainpackage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DialogPane;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
 /**
  * FXML Controller class
@@ -15,6 +20,24 @@ import javafx.fxml.Initializable;
  */
 public class AddCharFXMLController implements Initializable {
 
+    @FXML
+    private MenuButton charDropDown;
+    @FXML
+    private ToggleGroup kartOptions;
+    @FXML
+    private DialogPane newCompetitorDialogue;
+    @FXML
+    private TextField name;
+    @FXML
+    private TextField id;
+
+    
+    
+    
+    
+    
+    
+    
     /**
      * Initializes the controller class.
      */
