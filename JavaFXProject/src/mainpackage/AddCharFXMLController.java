@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
@@ -57,7 +58,7 @@ public class AddCharFXMLController implements Initializable {
         String lname = lastName.getText();
         int charID = Integer.valueOf(id.getText());
         String character = "Luigi"; //charDropDown.getText(); // <-- is it really that easy? is that actually going to work?
-        String vehicle = kartOptions.getSelectedToggle().getClass().getName();// not sure how to loop through 
+        String vehicle = ((RadioButton) (kartOptions.getSelectedToggle())).getText();// not sure how to loop through 
         
         
         Competitor ch = new Competitor(charID, fName, lname, character, vehicle);
