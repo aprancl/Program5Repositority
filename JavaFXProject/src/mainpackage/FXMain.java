@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 public class FXMain extends Application {
 
     // this is the start of the main
+    // this is another practice commit 
     @Override
     public void start(Stage primaryStage) {
 
