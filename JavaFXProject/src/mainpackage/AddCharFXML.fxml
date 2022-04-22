@@ -4,8 +4,8 @@
 <?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.RadioMenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -18,8 +18,7 @@
          <children>
             <MenuButton fx:id="charDropDown" alignment="CENTER" contentDisplay="CENTER" layoutX="186.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="-Choose a Character-">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" />
               </items>
             </MenuButton>
             <Label layoutX="44.0" layoutY="83.0" text="Last Name:">
@@ -213,7 +212,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="lastName" layoutX="189.0" layoutY="82.0" />
+            <TextField fx:id="lastName" layoutX="181.0" layoutY="83.0" />
          </children>
       </AnchorPane>
    </content>

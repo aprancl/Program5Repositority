@@ -61,6 +61,7 @@ public class MainFXMLController implements Initializable {
     @FXML
     private void addCharacter(ActionEvent event) {
         openCharStage();
+        // update the char stage
     }
 
 }
