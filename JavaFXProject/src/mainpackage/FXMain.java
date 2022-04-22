@@ -27,13 +27,15 @@ import javafx.stage.Stage;
 public class FXMain extends Application {
 
     private static Stage addCharStage = null;
-    // this is the start of the main
-    // this is another practice commit 
+
+    // the container holding all of our characters 
+    private static ArrayList<Competitor> chars = new ArrayList<>();
+
     @Override
     public void start(Stage primaryStage) {
 
         // Create and display the main window
-        
+        // Create and display the main window
         Parent root = null;
         try {
             // refer to the FXML file specific to the "MainFXMLController"
@@ -52,32 +54,29 @@ public class FXMain extends Application {
 
         createAddCharStage();
     }
-    
-    
-    
+
     public void createAddCharStage() {
         addCharStage = new Stage();
         addCharStage.setTitle("Add Your Character");
         addCharStage.setAlwaysOnTop(true);
         addCharStage.setResizable(false);
     }
-    
-    public static Stage getAddCharStage(){
+
+    public static Stage getAddCharStage() {
         return addCharStage;
     }
 
+    public static ArrayList<Competitor> getChars(){
+        return chars;
+    }
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        
-        // the container holding all of our characters 
-        ArrayList<Competitor> chars = new ArrayList<>();
-        
-        
+
         launch(args);
-        
+
     }
 
 }

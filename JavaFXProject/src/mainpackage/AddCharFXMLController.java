@@ -56,13 +56,16 @@ public class AddCharFXMLController implements Initializable {
         String fName = firstName.getText();
         String lname = lastName.getText();
         int charID = Integer.valueOf(id.getText());
-        String character = charDropDown.getText(); // <-- is it really that easy? is that actually going to work?
-        String vehicle = "dummy kart"; //kartOptions.getSelectedToggle();// not sure how to loop through 
+        String character = "Luigi"; //charDropDown.getText(); // <-- is it really that easy? is that actually going to work?
+        String vehicle = kartOptions.getSelectedToggle().getClass().getName();// not sure how to loop through 
         
         
         Competitor ch = new Competitor(charID, fName, lname, character, vehicle);
         
         // somehow add to the arraylist using chars.add(ch);
+        FXMain.getChars().add(ch);
+        
+        System.out.println(ch.toString());
         
         
         
