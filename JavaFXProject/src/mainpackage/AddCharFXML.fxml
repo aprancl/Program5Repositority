@@ -12,7 +12,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
+<TitledPane collapsible="false" prefHeight="713.0" prefWidth="871.0" text="Add Character" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+=======
 <TitledPane collapsible="false" prefHeight="713.0" prefWidth="871.0" text="Main Menu" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.AddCharFXMLController">
+>>>>>>> 8f882d69a2643563dd5b3720daec7661056c170b
    <content>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -64,7 +68,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <RadioButton layoutX="417.0" layoutY="94.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Standard Kart">
+            <RadioButton fx:id="standardKart" layoutX="417.0" layoutY="94.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Standard Kart">
                <font>
                   <Font size="14.0" />
                </font>
@@ -72,22 +76,22 @@
                   <ToggleGroup fx:id="kartOptions" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton layoutX="417.0" layoutY="128.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Pipe Frame" toggleGroup="$kartOptions">
+            <RadioButton fx:id="pipeFrame" layoutX="417.0" layoutY="128.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Pipe Frame" toggleGroup="$kartOptions">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="417.0" layoutY="162.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Mach 8" toggleGroup="$kartOptions">
+            <RadioButton fx:id="mach8" layoutX="417.0" layoutY="162.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Mach 8" toggleGroup="$kartOptions">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="417.0" layoutY="196.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Steel Driver" toggleGroup="$kartOptions">
+            <RadioButton fx:id="steelDriver" layoutX="417.0" layoutY="196.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Steel Driver" toggleGroup="$kartOptions">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="417.0" layoutY="232.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Cat Cruiser" toggleGroup="$kartOptions">
+            <RadioButton fx:id="catCruiser" layoutX="417.0" layoutY="232.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Cat Cruiser" toggleGroup="$kartOptions">
                <font>
                   <Font size="14.0" />
                </font>
