@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -25,6 +26,7 @@ import javafx.stage.Stage;
  */
 public class FXMain extends Application {
 
+    private static Stage addCharStage = null;
     // this is the start of the main
     // this is another practice commit 
     @Override
@@ -48,6 +50,20 @@ public class FXMain extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        createAddCharStage();
+    }
+    
+    
+    
+    public void createAddCharStage() {
+        addCharStage = new Stage();
+        addCharStage.setTitle("Add Your Character");
+        addCharStage.setAlwaysOnTop(true);
+        addCharStage.setResizable(false);
+    }
+    
+    public static Stage getAddCharStage(){
+        return addCharStage;
     }
 
     /**

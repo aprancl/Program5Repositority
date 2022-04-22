@@ -18,7 +18,7 @@
          <content>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button layoutX="27.0" layoutY="29.0" mnemonicParsing="false" text="Add Character">
+                  <Button layoutX="27.0" layoutY="29.0" mnemonicParsing="false" onAction="#addCharacter" text="Add Character">
                      <font>
                         <Font size="16.0" />
                      </font>
