@@ -5,6 +5,7 @@
 package mainpackage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -53,7 +54,14 @@ public class FXMain extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        
+        // the container holding all of our characters 
+        ArrayList<Competitor> chars = new ArrayList<>();
+        
+        
         launch(args);
+        
     }
 
 }

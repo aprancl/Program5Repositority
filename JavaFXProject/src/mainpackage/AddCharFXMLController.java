@@ -28,9 +28,12 @@ public class AddCharFXMLController implements Initializable {
     @FXML
     private DialogPane newCompetitorDialogue;
     @FXML
-    private TextField name;
+    private TextField firstName;
     @FXML
     private TextField id;
+    @FXML
+    private TextField lastName;
+    
 
     
     
@@ -50,10 +53,18 @@ public class AddCharFXMLController implements Initializable {
     @FXML
     private void btnOK(ActionEvent event) {
         
-        // assign 
-        String charName = name.getText();
+        // get and assign the values of variables to a new compettier obejct 
+        String fName = firstName.getText();
+        String lname = lastName.getText();
         int charID = Integer.valueOf(id.getText());
-        String kart = "dummy kart"; //kartOptions.getSelectedToggle();
+        String character = charDropDown.getText(); // <-- is it really that easy? is that actually going to work?
+        String vehicle = "dummy kart"; //kartOptions.getSelectedToggle();// not sure how to loop through 
+        
+        
+        Competitor ch = new Competitor(charID, fName, lname, character, vehicle);
+        
+        // somehow add to the arraylist using chars.add(ch);
+        
         
         
     }
