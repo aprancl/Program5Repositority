@@ -12,11 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<TitledPane collapsible="false" prefHeight="713.0" prefWidth="871.0" text="Add Character" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-=======
 <TitledPane collapsible="false" prefHeight="713.0" prefWidth="871.0" text="Main Menu" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.AddCharFXMLController">
->>>>>>> 8f882d69a2643563dd5b3720daec7661056c170b
    <content>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>

@@ -37,7 +37,7 @@ public class MainFXMLController implements Initializable {
         // TODO
     }
 
-    public void openHistoryWindow() {
+    public void openCharStage() {
         try {
             //FXMLLoader loader = new FXMLLoader(getClass().getResource("/HistoryFXML.fxml")); // /Users/anthonyprancl/Documents/Classes/NetBeansProjects/JavaFXLearning/CalculatorJavaFX/src/MainPackage/HistoryFXML.fxml
             FXMLLoader loader = new FXMLLoader();
@@ -60,7 +60,7 @@ public class MainFXMLController implements Initializable {
 
     @FXML
     private void addCharacter(ActionEvent event) {
-        openHistoryWindow();
+        openCharStage();
     }
 
 }

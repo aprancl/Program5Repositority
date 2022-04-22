@@ -49,9 +49,6 @@ public class AddCharFXMLController implements Initializable {
     
     
     
-    
-    
-    
     @FXML
     private void btnOK(ActionEvent event) {
         
