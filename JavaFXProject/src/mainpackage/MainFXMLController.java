@@ -67,17 +67,14 @@ public class MainFXMLController implements Initializable {
 
     public void openCharStage() {
         try {
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/HistoryFXML.fxml")); // /Users/anthonyprancl/Documents/Classes/NetBeansProjects/JavaFXLearning/CalculatorJavaFX/src/MainPackage/HistoryFXML.fxml
+            
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/mainpackage/AddCharFXML.fxml"));
             Parent root = loader.load(); // error
 
-            //root = FXMLLoader.load(getClass().getResource("HistoryFXML.fxml"));
+           
             FXMain.getAddCharStage().setScene(new Scene(root));
-
-//            HistoryFXMLController historyFXMLController = loader.getController();
-//            historyFXMLController.initializeCalculation(calculation_history);
-//            
+         
             FXMain.getAddCharStage().show();
 
         } catch (IOException ex) {
@@ -87,17 +84,13 @@ public class MainFXMLController implements Initializable {
 
     public void openSearchStage() {
         try {
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/HistoryFXML.fxml")); // /Users/anthonyprancl/Documents/Classes/NetBeansProjects/JavaFXLearning/CalculatorJavaFX/src/MainPackage/HistoryFXML.fxml
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/mainpackage/SearchCharFXML.fxml"));
-            Parent root = loader.load(); // error
+            Parent root = loader.load(); 
 
-            //root = FXMLLoader.load(getClass().getResource("HistoryFXML.fxml"));
+           
             FXMain.getSearchCharStage().setScene(new Scene(root));
 
-//            HistoryFXMLController historyFXMLController = loader.getController();
-//            historyFXMLController.initializeCalculation(calculation_history);
-//            
             FXMain.getSearchCharStage().show();
 
         } catch (IOException ex) {
@@ -136,8 +129,8 @@ public class MainFXMLController implements Initializable {
             searchIDAndDisplayChar(id);
         }
         else {
-            // This needs to be printed to the errorReporter label instead of system. Message is here for debug purposes until then.
-            System.out.println("\nInvalid id entry. Please try again.\n");
+            // report to error log
+            errorReporter.setText("Error: Invalid id entry. Please try again.");
         }
     }
 
@@ -191,8 +184,8 @@ public class MainFXMLController implements Initializable {
             }
 
         }
-        // once again, for debug purposes only, but ultimately for error log thingy
-        System.out.printf("Competitor \"%s\" was not found in the system.\n\n", queryFullName);
+        // report to error log
+        errorReporter.setText(String.format("Competitor \"%s\" was not found in the system.\n\n", queryFullName));
 
     }
     

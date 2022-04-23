@@ -53,6 +53,9 @@ public class AddCharFXMLController implements Initializable {
     @FXML
     private void btnOK(ActionEvent event) {
         
+        // make if block to check if all data fields have been entered, and return error if not all full
+        
+        
         // get and assign the values of variables to a new compettier obejct 
         String fName = firstName.getText();
         String lname = lastName.getText();
