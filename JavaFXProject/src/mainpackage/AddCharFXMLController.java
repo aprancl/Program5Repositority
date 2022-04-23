@@ -53,7 +53,8 @@ public class AddCharFXMLController implements Initializable {
     @FXML
     private void btnOK(ActionEvent event) {
         
-        // make if block to check if all data fields have been entered, and return error if not all full
+        
+       
         
         
         // get and assign the values of variables to a new compettier obejct 
@@ -63,6 +64,7 @@ public class AddCharFXMLController implements Initializable {
         String character = "Luigi"; //charDropDown.getText(); // <-- is it really that easy? is that actually going to work?
         String vehicle = ((RadioButton) (kartOptions.getSelectedToggle())).getText();// not sure how to loop through 
         
+        // make if else else else block to check if all data fields have been entered, and return error to error log if true
         
         Competitor ch = new Competitor(charID, fName, lname, character, vehicle);
         
@@ -73,10 +75,12 @@ public class AddCharFXMLController implements Initializable {
         // issue, right now, the list view points to null, which is a problem
         // okay so this no longer points to null but its wont print 
         MainFXMLController.getChractersInSystem().getItems().add(ch.toString());
-
+        //closes this stage
+        FXMain.getAddCharStage().close();
         
         
         
     }
+    
     
 }
