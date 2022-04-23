@@ -57,6 +57,10 @@ public class Competitor {
     public static int getNumCompetitors() {
         return numCompetitors;
     }
+    
+    public String getFullName(){
+        return (this.getFirstName() + " " + this.getLastName());
+    }
 
     // SETTERS
     public void setId(int id) {
