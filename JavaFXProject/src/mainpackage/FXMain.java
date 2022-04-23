@@ -20,13 +20,13 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- *
  * @author anthonyprancl
  * @author2 Nick Reed
  */
 public class FXMain extends Application {
 
     private static Stage addCharStage = null;
+    private static Stage searchCharStage = null;
 
     // the container holding all of our characters 
     private static ArrayList<Competitor> chars = new ArrayList<>();
@@ -52,20 +52,37 @@ public class FXMain extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        // Call all stage creating methods in case of use.
         createAddCharStage();
+        createSearchCharStage();
+        
     }
-
+    // Instantiates the addChar (new competitor creator) stage.
     public void createAddCharStage() {
         addCharStage = new Stage();
-        addCharStage.setTitle("Add Your Character");
+        addCharStage.setTitle("Add New Competitor");
         addCharStage.setAlwaysOnTop(true);
         addCharStage.setResizable(false);
     }
-
+    
+    // Instantiates the searchChar (competitor search dialogue) stage.
+    public void createSearchCharStage() {
+        searchCharStage = new Stage();
+        searchCharStage.setTitle("Competitor Search Service");
+        searchCharStage.setAlwaysOnTop(true);
+        searchCharStage.setResizable(false);
+    }
+    
+    // Getters for Stages accessible from the main menu.
     public static Stage getAddCharStage() {
         return addCharStage;
     }
+    
+    public static Stage getSearchCharStage() {
+        return searchCharStage;
+    }
 
+    // Getter for Arraylist of competitors, that we are still commited to naming 'chars'.
     public static ArrayList<Competitor> getChars(){
         return chars;
     }
