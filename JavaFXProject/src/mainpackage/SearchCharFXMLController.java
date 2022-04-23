@@ -26,11 +26,6 @@ public class SearchCharFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        displayCharacter();
-    }    
-    
-    public void displayCharacter() {
-        compInfo.setText((MainFXMLController.getCharToDisplay()).toString());
     }    
     
 }
