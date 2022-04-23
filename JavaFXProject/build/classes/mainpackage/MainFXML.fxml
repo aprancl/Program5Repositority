@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,44 +13,47 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.MainFXMLController">
    <top>
       <TitledPane collapsible="false" prefHeight="713.0" prefWidth="871.0" text="Main Menu" BorderPane.alignment="CENTER">
          <content>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button layoutX="27.0" layoutY="29.0" mnemonicParsing="false" text="Add Character">
+                  <Button layoutX="40.0" layoutY="29.0" mnemonicParsing="false" onAction="#addCharacter" text="Add Character">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Label layoutX="42.0" layoutY="100.0" text="Search by ID:">
+                  <Label layoutX="42.0" layoutY="90.0" text="Search by ID:">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Button layoutX="368.0" layoutY="97.0" mnemonicParsing="false" text="Go" />
-                  <Button layoutX="368.0" layoutY="142.0" mnemonicParsing="false" text="Go" />
-                  <Label layoutX="42.0" layoutY="144.0" prefHeight="20.0" prefWidth="133.0" text="Search by Name:">
+                  <Button fx:id="searchIDGoButton" layoutX="370.0" layoutY="90.0" mnemonicParsing="false" onAction="#readAndSearchID" text="Go" />
+                  <Button fx:id="searchNameGoButton" layoutX="370.0" layoutY="150.0" mnemonicParsing="false" text="Go" />
+                  <Label layoutX="42.0" layoutY="150.0" prefHeight="20.0" prefWidth="133.0" text="Search by Name:">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="193.0" layoutY="97.0" />
-                  <TextField layoutX="194.0" layoutY="142.0" />
+                  <TextField fx:id="searchIDField" layoutX="195.0" layoutY="90.0" />
+                  <TextField fx:id="searchNameField" layoutX="195.0" layoutY="150.0" />
                   <Label layoutX="621.0" layoutY="49.0" text="Perform Time Trial">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <ListView layoutX="82.0" layoutY="281.0" prefHeight="278.0" prefWidth="717.0" />
+                  <ScrollPane layoutX="81.0" layoutY="282.0" prefHeight="330.0" prefWidth="710.0">
+                     <content>
+                        <ListView fx:id="chractersInSystem" prefHeight="328.0" prefWidth="708.0" />
+                     </content>
+                  </ScrollPane>
                   <Label layoutX="345.0" layoutY="225.0" text="Chracters in System">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <Label layoutX="122.0" layoutY="615.0" prefHeight="17.0" prefWidth="652.0" text="Error x y z">
+                  <Label fx:id="errorReporter" layoutX="122.0" layoutY="615.0" prefHeight="17.0" prefWidth="652.0" text="Error x y z">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -65,13 +69,13 @@
                       <RowConstraints maxHeight="48.54095458984375" minHeight="10.0" prefHeight="39.47642517089844" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sunshine Airport" />
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Dolphin Shoals" GridPane.columnIndex="1" />
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Electrodome" GridPane.rowIndex="2" />
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="99.0" text="Mount Wario" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button fx:id="SATrialButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sunshine Airport" />
+                        <Button fx:id="DSTrialButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Dolphin Shoals" GridPane.columnIndex="1" />
+                        <Button fx:id="EDTrialButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Electrodome" GridPane.rowIndex="2" />
+                        <Button fx:id="MWTrialButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="99.0" text="Mount Wario" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
-                  <Button layoutX="33.0" layoutY="203.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="141.0" text="Display Statistics">
+                  <Button fx:id="displayStatsButton" layoutX="195.0" layoutY="29.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="141.0" text="Display Statistics">
                      <font>
                         <Font size="16.0" />
                      </font>
