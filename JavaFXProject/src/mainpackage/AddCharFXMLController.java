@@ -67,6 +67,10 @@ public class AddCharFXMLController implements Initializable {
         FXMain.getChars().add(ch);
         
         System.out.println(ch.toString());
+        // issue, right now, the list view points to null, which is a problem
+        // okay so this no longer points to null but its wont print 
+        MainFXMLController.getChractersInSystem().getItems().add(ch.toString());
+
         
         
         
