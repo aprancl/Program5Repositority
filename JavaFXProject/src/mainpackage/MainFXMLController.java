@@ -126,6 +126,7 @@ public class MainFXMLController implements Initializable {
 
     // Method that reads String input from searchIDField and parses it into an integer id if it is 7 chracters in length and contains only digits.
     // This ultimately calls the searchIDAndDisplayChar() if id is valid.
+    @FXML
     public void readAndSearchID() {
         int id;
         String s = (searchIDField.getText());
@@ -166,7 +167,33 @@ public class MainFXMLController implements Initializable {
     public static Competitor getCharToDisplay() {
         return charToDisplay;
     }
+
+    @FXML
+    private void ReadAndSearchName(ActionEvent event) {
+        
+        String queryFullName = searchNameField.getText();
+        
+        // loop through our competitors ArrayList
+        for (int i = 0; i < Competitor.getNumCompetitors(); i++) {
+            String compFirstName = FXMain.getChars().get(i).getFirstName();
+            String compLastName = FXMain.getChars().get(i).getLastName();
+            String compFullName = compFirstName + " " + compLastName;
+
+            if (compFullName.equalsIgnoreCase(queryFullName)) {
+                charToDisplay = FXMain.getChars().get(i);
+                openSearchStage();
+                return;
+                
+            }
+
+        }
+        // once again, for debug purposes only, but ultimately for error log thingy
+        System.out.printf("Competitor \"%s\" was not found in the system.\n\n", queryFullName);
+        
+    }
     
+    
+  
     
     
 
