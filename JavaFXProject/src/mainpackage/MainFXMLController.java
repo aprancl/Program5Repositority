@@ -130,7 +130,7 @@ public class MainFXMLController implements Initializable {
         }
         else {
             // report to error log
-            errorReporter.setText("Error: Invalid id entry. Please try again.");
+            errorReporter.setText("Error: Invalid id entry. Please enter an id that is 7 integers long .");
         }
     }
 
