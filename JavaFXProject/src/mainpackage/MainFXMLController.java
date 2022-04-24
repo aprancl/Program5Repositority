@@ -30,7 +30,7 @@ public class MainFXMLController implements Initializable {
 
     // this is the variable that is pointing to the central list of characters on the main window
     @FXML
-    private static ListView<String> chractersInSystem = new ListView();
+    private static ListView charactersInSystem;
 
     private static int searchCharID;
 
@@ -67,14 +67,13 @@ public class MainFXMLController implements Initializable {
 
     public void openCharStage() {
         try {
-            
+
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/mainpackage/AddCharFXML.fxml"));
             Parent root = loader.load(); // error
 
-           
             FXMain.getAddCharStage().setScene(new Scene(root));
-         
+
             FXMain.getAddCharStage().show();
 
         } catch (IOException ex) {
@@ -86,9 +85,8 @@ public class MainFXMLController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/mainpackage/SearchCharFXML.fxml"));
-            Parent root = loader.load(); 
+            Parent root = loader.load();
 
-           
             FXMain.getSearchCharStage().setScene(new Scene(root));
 
             FXMain.getSearchCharStage().show();
@@ -101,6 +99,12 @@ public class MainFXMLController implements Initializable {
     @FXML
     private void addCharacter(ActionEvent event) {
         openCharStage();
+
+        // update the listview window
+        FXMain.getChars().forEach((competitor) -> {
+            charactersInSystem.getItems().add(competitor.toString()); // important
+        });
+
         // update the char stage
     }
 
@@ -163,7 +167,6 @@ public class MainFXMLController implements Initializable {
         return charToDisplay;
     }
 
-    
     // this method, when a search by name is initialized by user, will search for the given user, and return their info on the proper window
     @FXML
     private void ReadAndSearchName(ActionEvent event) {
@@ -188,11 +191,9 @@ public class MainFXMLController implements Initializable {
         errorReporter.setText(String.format("Competitor \"%s\" was not found in the system.\n\n", queryFullName));
 
     }
-    
-    
-    public static ListView getChractersInSystem(){
-        return MainFXMLController.chractersInSystem;
+
+    public static ListView getCharactersInSystem() {
+        return MainFXMLController.charactersInSystem;
     }
 
 }
-

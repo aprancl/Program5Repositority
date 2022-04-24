@@ -32,17 +32,13 @@ public class FXMain extends Application {
     private static ArrayList<Competitor> chars = new ArrayList<>();
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
 
         // Create and display the main window
         // Create and display the main window
-        Parent root = null;
-        try {
-            // refer to the FXML file specific to the "MainFXMLController"
-            root = FXMLLoader.load(getClass().getResource("MainFXML.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(FXMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+        Parent root = FXMLLoader.load(getClass().getResource("MainFXML.fxml"));
+           
 
         // set scene as the main window
         Scene scene = new Scene(root);
@@ -55,38 +51,41 @@ public class FXMain extends Application {
         // Call all stage creating methods in case of use.
         createAddCharStage();
         createSearchCharStage();
-        
+
     }
+
     // Instantiates the addChar (new competitor creator) stage.
     public void createAddCharStage() {
         addCharStage = new Stage();
         addCharStage.setTitle("Add New Competitor");
         addCharStage.setAlwaysOnTop(true);
         addCharStage.setResizable(false);
+        addCharStage.initModality(Modality.APPLICATION_MODAL);
     }
-    
+
     // Instantiates the searchChar (competitor search dialogue) stage.
     public void createSearchCharStage() {
         searchCharStage = new Stage();
         searchCharStage.setTitle("Competitor Search Service");
         searchCharStage.setAlwaysOnTop(true);
         searchCharStage.setResizable(false);
+        searchCharStage.initModality(Modality.APPLICATION_MODAL);
     }
-    
+
     // Getters for Stages accessible from the main menu.
     public static Stage getAddCharStage() {
         return addCharStage;
     }
-    
+
     public static Stage getSearchCharStage() {
         return searchCharStage;
     }
 
     // Getter for Arraylist of competitors, that we are still commited to naming 'chars'.
-    public static ArrayList<Competitor> getChars(){
+    public static ArrayList<Competitor> getChars() {
         return chars;
     }
-    
+
     /**
      * @param args the command line arguments
      */

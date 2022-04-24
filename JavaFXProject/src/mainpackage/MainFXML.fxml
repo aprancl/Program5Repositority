@@ -45,10 +45,10 @@
                   </Label>
                   <ScrollPane layoutX="81.0" layoutY="282.0" prefHeight="330.0" prefWidth="710.0">
                      <content>
-                        <ListView fx:id="chractersInSystem" prefHeight="328.0" prefWidth="708.0" />
+                        <ListView fx:id="charactersInSystem" prefHeight="328.0" prefWidth="708.0" />
                      </content>
                   </ScrollPane>
-                  <Label layoutX="345.0" layoutY="225.0" text="Chracters in System">
+                  <Label layoutX="317.0" layoutY="230.0" text="Competitors in System" underline="true">
                      <font>
                         <Font size="22.0" />
                      </font>

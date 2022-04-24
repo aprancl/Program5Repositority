@@ -112,6 +112,8 @@ public class Competitor {
 
         return data;
     }
+    
+    
 
     
     // Other Methods not explicitly in UML Diagram

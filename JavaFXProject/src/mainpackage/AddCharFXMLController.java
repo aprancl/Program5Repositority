@@ -17,6 +17,7 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
@@ -69,8 +70,8 @@ public class AddCharFXMLController implements Initializable {
         String fName = firstName.getText();
         String lname = lastName.getText();
         int charID = Integer.valueOf(id.getText());
-        String character = "Luigi"; //charDropDown.getText(); // <-- is it really that easy? is that actually going to work?
-        String vehicle = ((RadioButton) (kartOptions.getSelectedToggle())).getText();// not sure how to loop through 
+        String character = ((RadioMenuItem) (characters.getSelectedToggle())).getText();
+        String vehicle = ((RadioButton) (kartOptions.getSelectedToggle())).getText();
 
         // somehow, this block isnt cathing the conditions
         if (!(fName.length() > 0)) {
@@ -94,7 +95,13 @@ public class AddCharFXMLController implements Initializable {
             System.out.println(ch.toString());
             // issue, right now, the list view points to null, which is a problem
             // okay so this no longer points to null but its wont print 
-            MainFXMLController.getChractersInSystem().getItems().add(ch.toString());
+
+            // MainFXMLController.getCharactersInSystem().getItems().add(ch.toString());
+            
+//            FXMain.getChars().forEach((competitor) -> {
+//                MainFXMLController.getCharactersInSystem().getItems().add(competitor.toString()); // important
+//            });
+
             //closes this stage
             FXMain.getAddCharStage().close();
         }
