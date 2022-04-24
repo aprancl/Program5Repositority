@@ -84,7 +84,7 @@ public class Competitor {
     }
 
     public void setBestTimes(int track, int time) {
-        bestTimes[track - 1] = time;
+        bestTimes[track] = time;
 
     }
 

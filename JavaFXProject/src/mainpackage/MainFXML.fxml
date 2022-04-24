@@ -6,6 +6,8 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -69,10 +71,14 @@
                       <RowConstraints maxHeight="48.54095458984375" minHeight="10.0" prefHeight="39.47642517089844" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="SATrialButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sunshine Airport" />
-                        <Button fx:id="DSTrialButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Dolphin Shoals" GridPane.columnIndex="1" />
-                        <Button fx:id="EDTrialButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Electrodome" GridPane.rowIndex="2" />
-                        <Button fx:id="MWTrialButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="99.0" text="Mount Wario" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#performTimeTrial" text="Sunshine Airport">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="timeTrialToggle" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#performTimeTrial" text="Dolphin Shoals" toggleGroup="$timeTrialToggle" GridPane.columnIndex="1" />
+                        <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#performTimeTrial" text="Electrodome" toggleGroup="$timeTrialToggle" GridPane.rowIndex="2" />
+                        <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#performTimeTrial" text="Mount Wario" toggleGroup="$timeTrialToggle" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <Button fx:id="displayStatsButton" layoutX="195.0" layoutY="29.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="141.0" text="Display Statistics">

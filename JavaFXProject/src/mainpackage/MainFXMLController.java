@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
+import java.util.Random;
 
 /**
  * FXML Controller class
@@ -25,6 +26,8 @@ import javafx.scene.layout.AnchorPane;
 import java.util.ArrayList;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 
 public class MainFXMLController implements Initializable {
 
@@ -46,15 +49,10 @@ public class MainFXMLController implements Initializable {
     @FXML
     private Label errorReporter;
     @FXML
-    private Button SATrialButton;
-    @FXML
-    private Button DSTrialButton;
-    @FXML
-    private Button EDTrialButton;
-    @FXML
-    private Button MWTrialButton;
-    @FXML
     private Button displayStatsButton;
+    @FXML
+    private ToggleGroup timeTrialToggle;
+    private static Random rng = new Random();
 
     // not sure what this is, but I shall just leave it
     /**
@@ -194,6 +192,49 @@ public class MainFXMLController implements Initializable {
 
     public static ListView getCharactersInSystem() {
         return MainFXMLController.charactersInSystem;
+    }
+
+    @FXML
+    private void performTimeTrial(ActionEvent event) {
+
+        if (Competitor.getNumCompetitors() < 1) {
+            errorReporter.setText("There are not competitors entered in the system");
+        }
+
+        else {
+            // have user select a track 
+            String track = ((ToggleButton) (timeTrialToggle.getSelectedToggle())).getText();
+
+            // loop through competitors and generate their times for the particular given track 
+            int newTime;
+            for (int i = 0; i < Competitor.getNumCompetitors(); i++) {
+
+                switch (track) {
+                    case "Sunshine Airport":
+                        newTime = FXMain.getBestTimes()[0] + rng.nextInt(30);
+                        FXMain.getChars().get(i).setBestTimes(0, newTime);
+                        break;
+                    case "Dolphin Shoals":
+                        newTime = FXMain.getBestTimes()[1] + rng.nextInt(30);
+                        FXMain.getChars().get(i).setBestTimes(1, newTime);
+                        break;
+                    case "Electrodome":
+                        newTime = FXMain.getBestTimes()[2] + rng.nextInt(30);
+                        FXMain.getChars().get(i).setBestTimes(2, newTime);
+                        break;
+                    case "Mount Wario":
+                        newTime = FXMain.getBestTimes()[3] + rng.nextInt(30);
+                        FXMain.getChars().get(i).setBestTimes(3, newTime);
+                        break;
+                }
+
+            }
+
+            
+            errorReporter.setText("All competitors have new times recorded");
+
+        }
+
     }
 
 }

@@ -30,6 +30,7 @@ public class FXMain extends Application {
 
     // the container holding all of our characters 
     private static ArrayList<Competitor> chars = new ArrayList<>();
+    private static int[] recordTimes = {115, 117, 115, 100};
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -79,6 +80,10 @@ public class FXMain extends Application {
 
     public static Stage getSearchCharStage() {
         return searchCharStage;
+    }
+    
+    public static int []getBestTimes(){
+        return recordTimes;
     }
 
     // Getter for Arraylist of competitors, that we are still commited to naming 'chars'.
