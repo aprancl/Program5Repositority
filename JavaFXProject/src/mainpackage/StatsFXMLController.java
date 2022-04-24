@@ -5,6 +5,7 @@
 package mainpackage;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -38,66 +39,77 @@ public class StatsFXMLController implements Initializable {
 
     /**
      * Initializes the controller class.
+     *
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        ArrayList<Competitor> chars = FXMain.getChars();
+        
+        SAStats.setText(displayStatistics(0, chars));
+        DSStats.setText(displayStatistics(1, chars));
+        EDStats.setText(displayStatistics(2, chars));
+        MWStats.setText(displayStatistics(3, chars));
+
     }
 
-    public static void displayStatistics(Competitor[] competitors) {
+    public static String displayStatistics(int track, ArrayList<Competitor> competitors) {
+        String data = "";
 
-        if (Competitor.getNumCompetitors() == 0) {
-            System.out.println("There are no statistics recorded, as there are no\n"
-                    + "competitors currently registered in the system.\n");
-        }
+        int avgSeconds = -1;
+        for (int i = 0; i < 4; i++) {
 
-        else {
-            // used to store average seconds for each track for latter
-            String[] box = new String[4];
+            int sumSeconds = 0;
+            int j;
+            int skipCounter = 0;
 
-            for (int i = 0; i < 4; i++) {
+            for (j = 0; j < Competitor.getNumCompetitors(); j++) {
 
-                int sumSeconds = 0;
-                int j;
-                int skipCounter = 0;
-                for (j = 0; j < Competitor.getNumCompetitors(); j++) {
-
-                    //makes those who have not performed time trial not be thrown into the calculations 
-                    if (competitors[j].getBestTimes(i) == 0) {
-                        // *important* this counter specifically will be used 
-                        // to adjust the calculations to account for
-                        // individuals that are overlooked
-                        skipCounter++;
-                        continue;
-                    }
-                    int seconds = competitors[j].getBestTimes(i);
-                    sumSeconds += seconds;
-
+                //makes those who have not performed time trial not be thrown into the calculations 
+                if (competitors.get(j).getBestTimes(track) == 0) {
+                    // *important* this counter specifically will be used 
+                    // to adjust the calculations to account for
+                    // individuals that are overlooked
+                    skipCounter++;
+                    continue;
                 }
-                // if there exists at least 1 competitor and they have not been skipped...
-                if (j > 0 && skipCounter < j) {
-                    //calculate and average
-                    int avgSeconds = sumSeconds / (j - skipCounter);
+                int seconds = competitors.get(j).getBestTimes(i);
+                sumSeconds += seconds;
 
-                    // then add the averaged information to the "box"
-                    box[i] = formatTime(avgSeconds);
-                }
             }
+            // if there exists at least 1 competitor and they have not been skipped...
+            if (j > 0 && skipCounter < j) {
+                //calculate and average
+                avgSeconds = sumSeconds / (j - skipCounter);
 
-            //Output Data     
-            String tempSA = (box[0] == null) ? "no time trials recorded" : box[0];
-            String tempDS = (box[1] == null) ? "no time trials recorded" : box[1];
-            String tempED = (box[2] == null) ? "no time trials recorded" : box[2];
-            String tempMW = (box[3] == null) ? "no time trials recorded" : box[3];
-
-            System.out.println("Statistics of Completed Time Trials - Average Time per Track");
-            System.out.printf("      Sunshine Airport: %s\n", tempSA);
-            System.out.printf("      Dolphin Shoals:   %s\n", tempDS);
-            System.out.printf("      Electrodrome:     %s\n", tempED);
-            System.out.printf("      Mount Wario:      %s\n", tempMW);
-            System.out.println();
+            }
         }
 
+        String trackName = null;
+        switch (track) {
+            case 0:
+                trackName = "Sunshine Airport";
+                break;
+            case 1:
+                trackName = "Dolphin Shoals";
+                break;
+            case 2:
+                trackName = "Electrodome";
+                break;
+            case 3:
+                trackName = "Mount Wario";
+                break;
+
+        }
+
+        //Output Data     
+        String status = (avgSeconds == -1) ? "no time trials recorded" : formatTime(avgSeconds);
+
+        data += String.format("Best time for %s: %s", trackName, status);
+
+        return data;
     }
 
     public static String formatTime(int seconds) {

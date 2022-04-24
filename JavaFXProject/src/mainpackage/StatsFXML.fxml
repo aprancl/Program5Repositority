@@ -36,7 +36,10 @@
                                  <items>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label fx:id="SAStats" alignment="CENTER" layoutX="-1.0" prefHeight="127.0" prefWidth="325.0" text="Statistics placeholder" />
+                                          <Label fx:id="SAStats" alignment="CENTER" layoutX="-1.0" prefHeight="127.0" prefWidth="325.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="130.0" prefWidth="282.0">
@@ -59,7 +62,10 @@
                                  <items>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label fx:id="DSStats" alignment="CENTER" prefHeight="127.0" prefWidth="325.0" text="Statistics placeholder" />
+                                          <Label fx:id="DSStats" alignment="CENTER" prefHeight="127.0" prefWidth="325.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -82,7 +88,10 @@
                                  <items>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label fx:id="EDStats" alignment="CENTER" prefHeight="127.0" prefWidth="325.0" text="Statistics placeholder" />
+                                          <Label fx:id="EDStats" alignment="CENTER" prefHeight="127.0" prefWidth="325.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="130.0" prefWidth="345.0">
@@ -105,7 +114,10 @@
                                  <items>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label fx:id="MWStats" alignment="CENTER" prefHeight="127.0" prefWidth="325.0" text="Statistics placeholder" />
+                                          <Label fx:id="MWStats" alignment="CENTER" prefHeight="127.0" prefWidth="325.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font></Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
