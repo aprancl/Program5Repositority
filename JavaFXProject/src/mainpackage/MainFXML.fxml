@@ -81,7 +81,7 @@
                         <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#performTimeTrial" text="Mount Wario" toggleGroup="$timeTrialToggle" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
-                  <Button fx:id="displayStatsButton" layoutX="195.0" layoutY="29.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="141.0" text="Display Statistics">
+                  <Button layoutX="195.0" layoutY="29.0" mnemonicParsing="false" onAction="#openStatsWindow" prefHeight="34.0" prefWidth="141.0" text="Display Statistics">
                      <font>
                         <Font size="16.0" />
                      </font>

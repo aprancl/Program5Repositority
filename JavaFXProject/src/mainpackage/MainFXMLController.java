@@ -17,18 +17,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import java.util.Random;
-
-/**
- * FXML Controller class
- *
- * @author anthonyprancl
- */
 import java.util.ArrayList;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 
+/**
+ * FXML Controller class
+ *
+ * @author anthonyprancl
+ */
 public class MainFXMLController implements Initializable {
 
     // this is the variable that is pointing to the central list of characters on the main window
@@ -48,8 +47,6 @@ public class MainFXMLController implements Initializable {
     private TextField searchNameField;
     @FXML
     private Label errorReporter;
-    @FXML
-    private Button displayStatsButton;
     @FXML
     private ToggleGroup timeTrialToggle;
     private static Random rng = new Random();
@@ -230,11 +227,28 @@ public class MainFXMLController implements Initializable {
 
             }
 
-            
             errorReporter.setText("All competitors have new times recorded");
 
         }
 
+    }
+
+    @FXML
+    private void openStatsWindow(ActionEvent event) {
+        
+        try {
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/mainpackage/StatsFXML.fxml"));
+            Parent root = loader.load(); // error
+
+            FXMain.getStatsStage().setScene(new Scene(root));
+
+            FXMain.getStatsStage().show();
+
+        } catch (IOException ex) {
+            System.out.println(ex);   // .getCause()        
+        }
     }
 
 }

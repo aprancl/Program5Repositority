@@ -27,6 +27,7 @@ public class FXMain extends Application {
 
     private static Stage addCharStage = null;
     private static Stage searchCharStage = null;
+    private static Stage statsStage = null;
 
     // the container holding all of our characters 
     private static ArrayList<Competitor> chars = new ArrayList<>();
@@ -52,6 +53,7 @@ public class FXMain extends Application {
         // Call all stage creating methods in case of use.
         createAddCharStage();
         createSearchCharStage();
+        createStatsStage();
 
     }
 
@@ -72,6 +74,14 @@ public class FXMain extends Application {
         searchCharStage.setResizable(false);
         searchCharStage.initModality(Modality.APPLICATION_MODAL);
     }
+    
+    public void createStatsStage(){
+        statsStage = new Stage();
+        statsStage.setTitle("Statistics");
+        statsStage.setAlwaysOnTop(true);
+        statsStage.setResizable(false);
+        statsStage.initModality(Modality.APPLICATION_MODAL);
+    }
 
     // Getters for Stages accessible from the main menu.
     public static Stage getAddCharStage() {
@@ -80,6 +90,10 @@ public class FXMain extends Application {
 
     public static Stage getSearchCharStage() {
         return searchCharStage;
+    }
+    
+    public static Stage getStatsStage(){
+        return statsStage;
     }
     
     public static int []getBestTimes(){
