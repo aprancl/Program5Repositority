@@ -18,6 +18,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import java.util.Random;
 import java.util.ArrayList;
+import javafx.collections.ObservableList;
+import javafx.event.EventType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
@@ -31,8 +33,9 @@ import javafx.scene.control.ToggleGroup;
 public class MainFXMLController implements Initializable {
 
     // this is the variable that is pointing to the central list of characters on the main window
+    private static ArrayList<String> charInfo = new ArrayList<>();
     @FXML
-    private static ListView charactersInSystem;
+    private ListView<String> charactersInSystem;
 
     private static int searchCharID;
 
@@ -58,6 +61,9 @@ public class MainFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+
+        charactersInSystem.getItems().add("Name                   |           ID            |                Times               |");
+
     }
 
     public void openCharStage() {
@@ -94,27 +100,9 @@ public class MainFXMLController implements Initializable {
     @FXML
     private void addCharacter(ActionEvent event) {
         openCharStage();
-
         // update the listview window
-        FXMain.getChars().forEach((competitor) -> {
-            charactersInSystem.getItems().add(competitor.toString()); // important
-        });
 
         // update the char stage
-    }
-
-    //  ---Beginning of Search System methods.
-    // Will be for checking name input for legal characters only. Will follow similar path to the searchIDField. Not done with search by name and I regret saying this would be the easy part.
-    public boolean containsOnlyNameChars(String s) {
-        char c;
-
-        for (int i = 0; i < s.length(); i++) {
-            c = s.charAt(i);
-            if (!(Character.isLetter(c) || c == ' ' || c == '-')) {     // --THIS METHOD IS NOT IMPLEMENTED YET--
-                return false;
-            }
-        }
-        return true;
     }
 
     // Method that reads String input from searchIDField and parses it into an integer id if it is 7 chracters in length and contains only digits.
@@ -187,8 +175,8 @@ public class MainFXMLController implements Initializable {
 
     }
 
-    public static ListView getCharactersInSystem() {
-        return MainFXMLController.charactersInSystem;
+    public ListView getCharactersInSystem() {
+        return this.charactersInSystem;
     }
 
     @FXML
@@ -235,7 +223,7 @@ public class MainFXMLController implements Initializable {
 
     @FXML
     private void openStatsWindow(ActionEvent event) {
-        
+
         try {
 
             FXMLLoader loader = new FXMLLoader();
@@ -249,6 +237,20 @@ public class MainFXMLController implements Initializable {
         } catch (IOException ex) {
             System.out.println(ex);   // .getCause()        
         }
+    }
+
+    @FXML
+    private void updateCharList(ActionEvent event) {
+
+        
+        ArrayList<Competitor> chars = FXMain.getChars();
+        charactersInSystem.getItems().clear();
+
+        charactersInSystem.getItems().add("Name                   |           ID            |                Times               |");
+        for (Competitor ch : chars) {
+            charactersInSystem.getItems().add(ch.toListViewString());
+        }
+
     }
 
 }

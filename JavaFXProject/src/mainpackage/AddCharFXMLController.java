@@ -95,14 +95,9 @@ public class AddCharFXMLController implements Initializable {
             System.out.println(ch.toString());
             // issue, right now, the list view points to null, which is a problem
             // okay so this no longer points to null but its wont print 
-
-            // MainFXMLController.getCharactersInSystem().getItems().add(ch.toString());
-            
-//            FXMain.getChars().forEach((competitor) -> {
-//                MainFXMLController.getCharactersInSystem().getItems().add(competitor.toString()); // important
-//            });
-
             //closes this stage
+            
+            
             FXMain.getAddCharStage().close();
         }
 

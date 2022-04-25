@@ -113,6 +113,14 @@ public class Competitor {
         return data;
     }
     
+    public String toListViewString(){
+        
+        String data = "";
+        
+        data += String.format("%s                %d            SA:%s  DS:%s  ED:%s  MW:%s               ", getFullName(), id, formatTime(getBestTimes(0)), formatTime(getBestTimes(1)), formatTime(getBestTimes(2)), formatTime(getBestTimes(3)) );
+
+        return data;
+    }
     
 
     
