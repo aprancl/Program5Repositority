@@ -58,7 +58,7 @@ public class Competitor {
         return numCompetitors;
     }
     
-    public String getFullName(){
+    public String getFullName(){ // Unique to this project
         return (this.getFirstName() + " " + this.getLastName());
     }
 
@@ -113,6 +113,14 @@ public class Competitor {
         return data;
     }
     
+    
+    // Other Methods not explicitly in UML Diagram
+    
+    // HELPER METHOD()
+    // Name: toListViewString()
+    // Input: None
+    // Output: String
+    // purpose: this to string method is specifically used to display data to the listview on the main window
     public String toListViewString(){
         
         String data = "";
@@ -127,9 +135,6 @@ public class Competitor {
         return data;
     }
     
-
-    
-    // Other Methods not explicitly in UML Diagram
     
     // effectively a toString() method intended for displayLeaderBoard() method
     public String toLeaderboardString(int track) {
