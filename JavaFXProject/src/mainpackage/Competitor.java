@@ -58,7 +58,7 @@ public class Competitor {
         return numCompetitors;
     }
     
-    public String getFullName(){
+    public String getFullName(){ // Unique to this project
         return (this.getFirstName() + " " + this.getLastName());
     }
 
@@ -113,18 +113,28 @@ public class Competitor {
         return data;
     }
     
+    
+    // Other Methods not explicitly in UML Diagram
+    
+    // HELPER METHOD()
+    // Name: toListViewString()
+    // Input: None
+    // Output: String
+    // purpose: this to string method is specifically used to display data to the listview on the main window
     public String toListViewString(){
         
         String data = "";
         
-        data += String.format("%s                %d            SA:%s  DS:%s  ED:%s  MW:%s               ", getFullName(), id, formatTime(getBestTimes(0)), formatTime(getBestTimes(1)), formatTime(getBestTimes(2)), formatTime(getBestTimes(3)) );
+        String SA = (bestTimes[0] == 0) ? " TBD" : formatTime(getBestTimes(0));
+        String DS = (bestTimes[1] == 0) ? " TBD" : formatTime(getBestTimes(1));
+        String ED = (bestTimes[2] == 0) ? " TBD" : formatTime(getBestTimes(2));
+        String MW = (bestTimes[3] == 0) ? " TBD" : formatTime(getBestTimes(3));
+        
+        data += String.format("       %s                     %d                   SA:%s  DS:%s  ED:%s  MW:%s ", getFullName(), id, SA, DS, ED, MW );
 
         return data;
     }
     
-
-    
-    // Other Methods not explicitly in UML Diagram
     
     // effectively a toString() method intended for displayLeaderBoard() method
     public String toLeaderboardString(int track) {

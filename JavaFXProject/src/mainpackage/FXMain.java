@@ -1,7 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
- */
+// Name: Anthony R. Prancl && Preston N. Reed
+// Date: 4/26/2022
+// Email: aprancl@mocs.flsouthern.edu && preed@mocs.flsouthern.edu
+// Course Number: CSC 2290 - 002
+// Assignment Title: Program 5: Java FX Group Project
+// Florida Southern College Honor Code: "I will practice academic and personal 
+//                                       integrity and excellence of character 
+//                                       and expect the same from others."
+
 package mainpackage;
 
 import java.io.IOException;
@@ -23,22 +28,31 @@ import javafx.stage.Stage;
  * @author anthonyprancl
  * @author2 Nick Reed
  */
-public class FXMain extends Application {
 
+// Main CLASS that is starting the entire program
+public class FXMain extends Application {
+    
+    
+    // These are the supporting stages that will be opened in tandem with the main window
+    //*important* the stages must be initialized to null so as to avoid NullPointerException
     private static Stage addCharStage = null;
     private static Stage searchCharStage = null;
     private static Stage statsStage = null;
 
-    // the container holding all of our characters 
+    // the container holding all of our characters and the record times
     private static ArrayList<Competitor> chars = new ArrayList<>();
     private static int[] recordTimes = {115, 117, 115, 100};
+    // ^ used to calculate new times for competitors
 
+    
+    // this is the start method, which will complete the instructions in its code
+    // block on opening the main window (or rather, right before to be more specific)
     @Override
     public void start(Stage primaryStage) throws IOException {
 
         // Create and display the main window
-        // Create and display the main window
-
+        
+        // this <root> is pointing to the information of the fxml that we want to display
         Parent root = FXMLLoader.load(getClass().getResource("MainFXML.fxml"));
            
 
@@ -59,27 +73,41 @@ public class FXMain extends Application {
 
     // Instantiates the addChar (new competitor creator) stage.
     public void createAddCharStage() {
+        
+        // initialize the previosly null stage
         addCharStage = new Stage();
+        // basic setup
         addCharStage.setTitle("Add New Competitor");
         addCharStage.setAlwaysOnTop(true);
         addCharStage.setResizable(false);
+        // this stops the main window from being tampered with when the user
+        // is on an agacent window
         addCharStage.initModality(Modality.APPLICATION_MODAL);
     }
 
     // Instantiates the searchChar (competitor search dialogue) stage.
     public void createSearchCharStage() {
+        // initialize the previosly null stage
         searchCharStage = new Stage();
+        // basic setup
         searchCharStage.setTitle("Competitor Search Service");
         searchCharStage.setAlwaysOnTop(true);
         searchCharStage.setResizable(false);
+        // this stops the main window from being tampered with when the user
+        // is on an agacent window
         searchCharStage.initModality(Modality.APPLICATION_MODAL);
     }
     
+    // Instantiates the Statistics (informational) stage.
     public void createStatsStage(){
+        // initialize the previosly null stage
         statsStage = new Stage();
+        // basic setup
         statsStage.setTitle("Statistics");
         statsStage.setAlwaysOnTop(true);
         statsStage.setResizable(false);
+        // this stops the main window from being tampered with when the user
+        // is on an agacent window
         statsStage.initModality(Modality.APPLICATION_MODAL);
     }
 
@@ -108,6 +136,8 @@ public class FXMain extends Application {
     /**
      * @param args the command line arguments
      */
+    
+    // finally, the main method, which just launches this program
     public static void main(String[] args) {
 
         launch(args);

@@ -23,6 +23,8 @@ public class SearchCharFXMLController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    // on intitilize, 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
