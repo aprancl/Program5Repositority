@@ -183,7 +183,7 @@ public class MainFXMLController implements Initializable {
     private void performTimeTrial(ActionEvent event) {
 
         if (Competitor.getNumCompetitors() < 1) {
-            errorReporter.setText("There are not competitors entered in the system");
+            errorReporter.setText("There are no competitors entered in the system");
         }
 
         else {
@@ -215,7 +215,7 @@ public class MainFXMLController implements Initializable {
 
             }
 
-            errorReporter.setText("All competitors have new times recorded");
+            errorReporter.setText(String.format("All competitors have new times recorded for: %s", track));
 
         }
 
