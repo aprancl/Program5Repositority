@@ -29,10 +29,10 @@ public class SearchCharFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         displayCharacter();
-    }    
-    
+    }
+
     public void displayCharacter() {
         compInfo.setText((MainFXMLController.getCharToDisplay()).toString());
-    }    
-    
+    }
+
 }
