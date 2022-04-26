@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.RadioButton?>
@@ -10,6 +9,8 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <TitledPane collapsible="false" prefHeight="713.0" prefWidth="871.0" text="Competitor Creation" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.AddCharFXMLController">
@@ -52,7 +53,7 @@
             </Label>
             <TextField fx:id="firstName" layoutX="180.0" layoutY="30.0" maxHeight="25.0" maxWidth="175.0" minHeight="25.0" minWidth="175.0" prefHeight="25.0" prefWidth="175.0" />
             <TextField fx:id="id" layoutX="180.0" layoutY="110.0" maxHeight="25.0" maxWidth="175.0" minHeight="25.0" minWidth="175.0" prefHeight="25.0" prefWidth="175.0" />
-            <Label fx:id="addCharErrorReporter" layoutX="122.0" layoutY="615.0" prefHeight="17.0" prefWidth="652.0" text="Error x y z / new competitor registered!">
+            <Label fx:id="addCharErrorReporter" layoutX="122.0" layoutY="615.0" prefHeight="17.0" prefWidth="652.0">
                <font>
                   <Font size="21.0" />
                </font>
@@ -215,12 +216,6 @@
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <Label alignment="CENTER" layoutX="90.0" layoutY="191.0" prefHeight="42.0" prefWidth="224.0" text="Character Options" underline="true">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <DialogPane fx:id="newCompetitorDialogue" layoutX="22.0" layoutY="261.0" prefHeight="304.0" prefWidth="360.0" />
             <Button layoutX="739.0" layoutY="560.0" mnemonicParsing="false" onAction="#btnOK" text="Go">
                <font>
                   <Font size="22.0" />
@@ -232,6 +227,11 @@
                </font>
             </Label>
             <TextField fx:id="lastName" layoutX="180.0" layoutY="70.0" maxHeight="25.0" maxWidth="175.0" minHeight="25.0" minWidth="175.0" prefHeight="25.0" prefWidth="175.0" />
+            <Circle fill="#479ceb" layoutX="201.0" layoutY="366.0" radius="117.0" stroke="RED" strokeType="INSIDE" />
+            <Line endX="-6.378173828125" endY="-62.3983154296875" layoutX="171.0" layoutY="372.0" startX="-38.38194274902344" startY="34.89312744140625" stroke="RED" strokeWidth="15.0" />
+            <Line endX="-15.0" endY="24.0" layoutX="213.0" layoutY="356.0" startX="-47.0980224609375" startY="-46.3983154296875" stroke="RED" strokeWidth="15.0" />
+            <Line endX="-43.65080261230469" endY="47.1619873046875" layoutX="271.0" layoutY="265.0" startX="-73.0" startY="115.0" stroke="RED" strokeWidth="15.0" />
+            <Line endX="135.3491973876953" endY="78.8818359375" layoutX="92.0" layoutY="232.0" startX="162.23236083984375" startY="171.05267333984375" stroke="RED" strokeWidth="15.0" />
          </children>
       </AnchorPane>
    </content>

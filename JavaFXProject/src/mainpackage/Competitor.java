@@ -117,7 +117,12 @@ public class Competitor {
         
         String data = "";
         
-        data += String.format("%s                %d            SA:%s  DS:%s  ED:%s  MW:%s               ", getFullName(), id, formatTime(getBestTimes(0)), formatTime(getBestTimes(1)), formatTime(getBestTimes(2)), formatTime(getBestTimes(3)) );
+        String SA = (bestTimes[0] == 0) ? " TBD" : formatTime(getBestTimes(0));
+        String DS = (bestTimes[1] == 0) ? " TBD" : formatTime(getBestTimes(1));
+        String ED = (bestTimes[2] == 0) ? " TBD" : formatTime(getBestTimes(2));
+        String MW = (bestTimes[3] == 0) ? " TBD" : formatTime(getBestTimes(3));
+        
+        data += String.format("       %s                     %d                   SA:%s  DS:%s  ED:%s  MW:%s ", getFullName(), id, SA, DS, ED, MW );
 
         return data;
     }

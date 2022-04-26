@@ -18,7 +18,7 @@
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <Label fx:id="StatsErrorBar" layoutX="122.0" layoutY="615.0" prefHeight="17.0" prefWidth="652.0" text="Error x y z">
+                  <Label fx:id="StatsErrorBar" layoutX="122.0" layoutY="615.0" prefHeight="17.0" prefWidth="652.0">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -44,7 +44,10 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="130.0" prefWidth="282.0">
                                        <children>
-                                          <Label fx:id="SALeader" alignment="CENTER" prefHeight="127.0" prefWidth="325.0" text="Statistics placeholder" />
+                                          <Label fx:id="SALeader" alignment="CENTER" prefHeight="127.0" prefWidth="325.0">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font></Label>
                                        </children>
                                     </AnchorPane>
                                  </items>
@@ -70,7 +73,10 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label fx:id="DSLeader" alignment="CENTER" prefHeight="127.0" prefWidth="325.0" text="Statistics placeholder" />
+                                          <Label fx:id="DSLeader" alignment="CENTER" prefHeight="127.0" prefWidth="325.0">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font></Label>
                                        </children>
                                     </AnchorPane>
                                  </items>
@@ -96,7 +102,10 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="130.0" prefWidth="345.0">
                                        <children>
-                                          <Label fx:id="EDLeader" alignment="CENTER" prefHeight="127.0" prefWidth="325.0" text="Statistics placeholder" />
+                                          <Label fx:id="EDLeader" alignment="CENTER" prefHeight="127.0" prefWidth="325.0">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font></Label>
                                        </children>
                                     </AnchorPane>
                                  </items>
@@ -122,7 +131,10 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label fx:id="MWLeader" alignment="CENTER" prefHeight="127.0" prefWidth="325.0" text="Statistics placeholder" />
+                                          <Label fx:id="MWLeader" alignment="CENTER" prefHeight="127.0" prefWidth="325.0">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font></Label>
                                        </children>
                                     </AnchorPane>
                                  </items>

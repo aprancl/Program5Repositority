@@ -62,7 +62,7 @@ public class MainFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
 
-        charactersInSystem.getItems().add("Name                   |           ID            |                Times               |");
+        charactersInSystem.getItems().add("            Name                 |                 ID                |                                                Times                                             |");
 
     }
 
@@ -246,7 +246,7 @@ public class MainFXMLController implements Initializable {
         ArrayList<Competitor> chars = FXMain.getChars();
         charactersInSystem.getItems().clear();
 
-        charactersInSystem.getItems().add("Name                   |           ID            |                Times               |");
+        charactersInSystem.getItems().add("            Name                 |                 ID                |                                                Times                                             |");
         for (Competitor ch : chars) {
             charactersInSystem.getItems().add(ch.toListViewString());
         }

@@ -68,7 +68,7 @@ public class AddCharFXMLController implements Initializable {
 
         // get and assign the values of variables to a new compettier obejct 
         String fName = firstName.getText();
-        String lname = lastName.getText();
+        String lName = lastName.getText();
         int charID = Integer.valueOf(id.getText());
         String character = ((RadioMenuItem) (characters.getSelectedToggle())).getText();
         String vehicle = ((RadioButton) (kartOptions.getSelectedToggle())).getText();
@@ -77,17 +77,17 @@ public class AddCharFXMLController implements Initializable {
         if (!(fName.length() > 0)) {
             addCharErrorReporter.setText("Error: You must use a legal first name");
         }
-        else if (!(fName.length() > 0)) {
+        else if (!(lName.length() > 0)) {
             addCharErrorReporter.setText("Error: You must use a legal last name");
         }
-        else if (!(String.valueOf(charID).length() > 0)) {
+        else if (String.valueOf(charID).length() < 7 || String.valueOf(charID).length() > 7) {
             addCharErrorReporter.setText("Error: You must use a legal character ID number");
         }
         // also for character and vehicle
 
         // make if else else else block to check if all data fields have been entered, and return error to error log if true
         else {
-            Competitor ch = new Competitor(charID, fName, lname, character, vehicle);
+            Competitor ch = new Competitor(charID, fName, lName, character, vehicle);
 
             // somehow add to the arraylist using chars.add(ch);
             FXMain.getChars().add(ch);
