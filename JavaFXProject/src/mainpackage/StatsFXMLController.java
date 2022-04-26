@@ -17,7 +17,7 @@ import javafx.scene.control.Label;
  * @author prest
  */
 public class StatsFXMLController implements Initializable {
-    // Data members found in StatsFXML
+
     @FXML
     private Label StatsErrorBar;
     @FXML
@@ -62,7 +62,6 @@ public class StatsFXMLController implements Initializable {
 
     }
 
-    // Find the leading competitor given and integer for track index and the ArrayList of competitors.
     public static String findLeader(int track, ArrayList<Competitor> competitors) {
         String data = "";
 
@@ -70,16 +69,16 @@ public class StatsFXMLController implements Initializable {
         int bestTime = Integer.MAX_VALUE;
         int bestCharIndex = -1;
         for (int i = 0; i < competitors.size(); i++) {
-            // Retreive time from bestTimes array in the current competitor object.
+
             int time = competitors.get(i).getBestTimes(track);
-            // If the competitor's time is better than the current best time, replace bestTime with competitor's time.
+
             if (time < bestTime && time > 0) {
                 bestTime = time;
                 bestCharIndex = i;
             }
 
         }
-        
+
         if (bestCharIndex == -1) {
             return "No times recorded";
 
